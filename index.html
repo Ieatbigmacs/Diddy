@@ -2,27 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DropGenix – Digital Goods Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Dropshipping Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-weight: normal;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .product h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .product p {
+      margin: 0 0 15px;
+      font-size: 16px;
+      color: #555;
+    }
+    .buy-btn {
+      background: #0070f3;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+    .buy-btn:hover {
+      background: #005ecb;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>DropGenix</h1>
-    <p>🔥 GFX Packs, Templates, Merch & More</p>
-  </header>
 
-  <section class="products">
-    <div class="product">
-      <img src="products/gfx-pack-1.png" alt="GFX Pack 1">
-      <h2>GFX Pack Vol. 1</h2>
-      <p>High-quality backgrounds, renders, and overlays for Roblox thumbnails.</p>
-      <a href="https://yourgumroadlink.com" target="_blank">Buy Now</a>
-    </div>
-  </section>
+<header>
+  <h1>My Dropshipping Store</h1>
+  <p>Simple & clean. Products shipped directly to you.</p>
+</header>
 
-  <footer>
-    <p>© 2025 DropGenix. Built by Me 😎</p>
-  </footer>
+<div class="products">
+  <div class="product">
+    <img src="https://via.placeholder.com/180?text=Product+1" alt="Product 1" />
+    <h2>Cool Gadget</h2>
+    <p>$29.99</p>
+    <button class="buy-btn" onclick="buyProduct('Cool Gadget', 29.99)">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/180?text=Product+2" alt="Product 2" />
+    <h2>Wireless Headphones</h2>
+    <p>$59.99</p>
+    <button class="buy-btn" onclick="buyProduct('Wireless Headphones', 59.99)">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/180?text=Product+3" alt="Product 3" />
+    <h2>Smartwatch</h2>
+    <p>$99.99</p>
+    <button class="buy-btn" onclick="buyProduct('Smartwatch', 99.99)">Buy Now</button>
+  </div>
+</div>
+
+<script>
+  function buyProduct(name, price) {
+    alert(`You clicked buy for "${name}" costing $${price.toFixed(2)}.\n\n` +
+          `Next step: Connect Stripe to process payments!`);
+  }
+</script>
+
 </body>
 </html>
